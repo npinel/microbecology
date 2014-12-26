@@ -1,0 +1,21 @@
+Acidobacteria	phylum,class
+Actinobacteria	phylum,class
+Aquificae	phylum,class
+Bacteroidetes	phylum,class
+Chlamydiae	phylum,class
+Chloroflexi	phylum,class
+Chrysiogenetes	phylum,class
+Cyanobacteria	phylum,class
+Deferribacteres	phylum,class
+Dictyoglomi	phylum,class
+Fibrobacteres	phylum,class
+Fusobacteria	phylum,class
+Gemmatimonadetes	phylum,class
+Incertae Sedis XI	family,family
+Incertae Sedis XII	family,family
+Lentisphaerae	phylum,class
+Nitrospira	phylum,class,genus
+Spirochaetes	phylum,class
+Thermodesulfobacteria	phylum,class
+Thermomicrobia	phylum,class
+Thermotogae	phylum,class
