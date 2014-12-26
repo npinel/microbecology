@@ -2,7 +2,6 @@
 "Alicyclobacillaceae"	family
 "Bacillaceae 1"	subfamily
 "Bacillaceae 2"	subfamily
-"Bacillaceae 2" Incertae Sedis	genus
 "Bacilli Incertae Sedis"	genus
 "Bacilli"	class
 "Carnobacteriaceae 1"	subfamily
@@ -16,26 +15,24 @@
 "Eubacteriaceae"	family
 "Gracilibacteraceae"	family
 "Heliobacteriaceae"	family
+"Lachnospiraceae Incertae Sedis"	genus
 "Lachnospiraceae"	family
-"Lachnospiraceae" Incertae Sedis	genus
 "Lactobacillales"	order
 "Leuconostocaceae"	family
 "Listeriaceae"	family
 "Paenibacillaceae 1"	subfamily
 "Paenibacillaceae 2"	subfamily
 "Paenibacillaceae"	family
+"Peptostreptococcaceae Incertae Sedis"	genus
 "Peptostreptococcaceae"	family
-"Peptostreptococcaceae" Incertae Sedis	genus
+"Ruminococcaceae Incertae Sedis"	genus
 "Ruminococcaceae"	family
-"Ruminococcaceae" Incertae Sedis	genus
 "Sporolactobacillaceae Incertae Sedis"	genus
 "Sporolactobacillaceae"	family
 "Staphylococcaceae"	family
 "Thermoactinomycetaceae"	family
 "Thermoanaerobacteraceae"	family
 "Thermoanaerobacterales"	order
-"Thermoanaerobacterales" Incertae Sedis III	family
-"Thermoanaerobacterales" Incertae Sedis IV	family
 Abiotrophia	genus
 Acaricomes	genus
 Acetanaerobacterium	genus
@@ -146,7 +143,6 @@ Allomonas	genus
 Alphaproteobacteria	class
 Alteromonadaceae	family
 Alteromonadales	order
-Alteromonadales Incertae Sedis	family
 Alteromonas	genus
 Alysiella	genus
 Amaricoccus	genus
@@ -197,7 +193,6 @@ Aquifex	genus
 Aquificaceae	family
 Aquificae	phylum,class
 Aquificales	order
-Aquificales Incertae Sedis	family
 Aquiflexum	genus
 Aquimarina	genus
 Aquimonas	genus
@@ -239,10 +234,7 @@ BRC1	phylum
 BRC1_genera_incertae_sedis	genus
 Bacillaceae	family
 Bacillales	order
-Bacillales Incertae Sedis XI	family
 Bacillariophyta	genus
-Bacilliales Incertae Sedis X	family
-Bacilliales Incertae Sedis XII	family
 Bacillus	supergenus
 Bacillus I	genus
 Bacillus a	genus
@@ -285,7 +277,6 @@ Beutenbergia	genus
 Beutenbergiaceae	family
 Bifidobacteriaceae	family
 Bifidobacteriales	order
-Bifidobacteriales Incertae Sedis	family
 Bifidobacterium	genus
 Bilophila	genus
 Bizionia	genus
@@ -322,7 +313,6 @@ Bulleidia	genus
 Burkholderia	genus
 Burkholderiaceae	family
 Burkholderiales	order
-Burkholderiales Incertae Sedis	family
 Buttiauxella	genus
 Butyrivibrio	genus
 Byssovorax	genus
@@ -425,14 +415,7 @@ Clostridiaceae 2 Incertae Sedis	genus
 Clostridiaceae 3	subfamily
 Clostridiaceae 4	subfamily
 Clostridiales	order
-Clostridiales Incertae Sedis XI	family
-Clostridiales Incertae Sedis XII	family
-Clostridiales Incertae Sedis XIII	family
-Clostridiales Incertae Sedis XIV	family
-Clostridiales Incertae Sedis XV	family
-Clostridiales Incertae Sedis XVI	family
 Clostridiales Incertae Sedis XVII	family
-Clostridiales Incertae Sedis XVIII	family
 Clostridium	genus
 Cobetia	genus
 Coenonia	genus
@@ -490,7 +473,6 @@ Dechloromonas	genus
 Deferribacter	genus
 Deferribacteraceae	family
 Deferribacterales	order
-Deferribacterales Incertae Sedis	family
 Deferribacteres	phylum,class
 Defluvibacter	genus
 Defluviicoccus	genus
@@ -695,7 +677,6 @@ Fusibacter	genus
 Fusobacteria	phylum,class
 Fusobacteriaceae	family
 Fusobacteriales	order
-Fusobacteriales Incertae Sedis	family
 Fusobacterium	genus
 Gaetbulibacter	genus
 Gaetbulimicrobium	genus
@@ -872,6 +853,26 @@ Ignavigranum	genus
 Ignicoccus	genus
 Ignisphaera	genus
 Ilyobacter	genus
+Incertae Sedis	genus
+Incertae Sedis III	family
+Incertae Sedis IV	family
+Incertae Sedis X	family
+Incertae Sedis XI	family,family
+Incertae Sedis XII	family,family
+Incertae Sedis XIII	family
+Incertae Sedis XIV	family
+Incertae Sedis XV	family
+Incertae Sedis XVI	family
+Incertae Sedis XVIII	family
+Incertae sedis 1	family
+Incertae sedis 10	family
+Incertae sedis 11	family
+Incertae sedis 2	family
+Incertae sedis 3	family
+Incertae sedis 4	family
+Incertae sedis 5	family
+Incertae sedis 6	family
+Incertae sedis 7	family
 Inquilinus	genus
 Intrasporangiaceae	family
 Intrasporangium	genus
@@ -1035,7 +1036,6 @@ Methanomethylovorans	genus
 Methanomicrobia	class
 Methanomicrobiaceae	family
 Methanomicrobiales	order
-Methanomicrobiales Incertae Sedis	family
 Methanoplanus	genus
 Methanopyraceae	family
 Methanopyrales	order
@@ -1368,7 +1368,6 @@ Pseudobutyrivibrio	genus
 Pseudochrobactrum	genus
 Pseudomonadaceae	family
 Pseudomonadales	order
-Pseudomonadales Incertae Sedis	family
 Pseudomonas	genus
 Pseudonocardia	genus
 Pseudonocardiaceae	family
@@ -1439,7 +1438,6 @@ Rhodovulum	genus
 Rickettsia	genus
 Rickettsiaceae	family
 Rickettsiales	order
-Rickettsiales Incertae Sedis	family
 Rickettsiella	genus
 Riemerella	genus
 Rikenella	genus

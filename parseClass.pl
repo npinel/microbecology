@@ -1,21 +1,56 @@
 #!/usr/bin/perl -w
 
 use strict;
+use XML::Simple;
 
-my %bergeys = ();
-open my $bergeys, '<', 'RankedBergeysTaxonomy.txt';
+# this hash is to deal with multiple ranks with identical names
+my %ranks = ('domain' => '00domain',
+             'phylum' => '01phylum',
+             'superclass' => '02superclass',
+             'class'  => '03class',
+             'subclass'  => '04subclass',
+             'order'  => '05order',
+             'suborder' => '06suborder',
+             'family' => '07family',
+             'subfamily' => '08subfamily',
+             'supergenus' => '09supergenus',
+             'genus'  => '10genus');
 
-for (<$bergeys>) {
-    next if (/^\#/ || /^\n/);
-    chomp;
-    my @s1 = split(/\t/);
-    my @s2 = split(/\,/, $s1[1]);
+## load taxonomy
+my $xml = new XML::Simple;
+my $doc = $xml->XMLin('bergeyTrainingTree.xml', KeyAttr => 'taxid');
 
-    foreach my $s2 (@s2) {
-	push(@{$bergeys{$s1[0]}}, $s2);
+# parse taxonomy, create hash{taxon}=numberedRank
+my %taxa = ();
+for my $key (keys (%{$doc->{'TreeNode'}}) ) {
+
+    my $rank = $doc->{'TreeNode'}->{$key}->{'rank'};
+    next if ($rank eq 'no rank');
+
+    if (exists $ranks{$rank}) {
+        my $name = $doc->{'TreeNode'}->{$key}->{'name'};
+        push(@{$taxa{$name}}, $ranks{$rank});
     }
-
 }
+
+open my $out1, '>', 'RankedBergeysTaxonomyTraining.txt';
+open my $out2, '>', 'MultirankedNames.txt';
+foreach my $k (sort keys %taxa) {
+    my $print_log = @{$taxa{$k}} > 1 ? 1 : 0;
+    @{$taxa{$k}} = sort {$a cmp $b} @{$taxa{$k}};
+    my $ranks = '';
+    foreach my $r (@{$taxa{$k}}) {
+	$r =~ s/^\d{1,2}//;
+	$ranks .= $r.',';
+    }
+    $ranks =~ s/\,$//;
+    print $out1 $k."\t".$ranks."\n";
+    print $out2 $k."\t".$ranks."\n" if ($print_log == 1);
+}
+close($out1);
+close($out2);
+
+exit;
 
 open my $in, '<', 'classifierOut.tmp';
 my %assign = ();
@@ -31,26 +66,24 @@ while (<$in>) {
 	s/\s$//;
 	s/\;$//;
 	my @class = split(/; /);
-	my %assigned = ();
 	my $ix = 0;
-	my $assigned = '';
 	for (my $i = 0; $i < @class; $i++) {
 	    if ($class[$i]) {
-		my $taxon = $class[$i];
-		my $prob  = $class[++$i];
-		unless ($taxon eq 'Root') {
-		    $assigned{$taxon} = exists $assigned{$taxon} ? $assigned{$taxon} + 1 : 0;
-		    $assigned = ${$bergeys{$taxon}}[$assigned{$taxon}].'.'.$taxon;
-		    print $assigned."\t".$prob."\n";
-		}
+		$class{$ix} = {'taxon' => $class[$i],
+			       'prob'  => $class[++$i]}; 
+		$ix++;
 	    }
 	}
 
-	$assign{$seqid} = $assigned;
+	my $class = '';
+	foreach my $k (sort keys %class) {
+	    $class = $class{$k}{'taxon'} if ($class{$k}{'prob'} >= 0.75);
+	}
+	
+	$assign{$seqid} = $class;
     }
 }
 
-print "the final assignment is:\n";
 for my $k (sort keys %assign) {
     print $k."\t".$assign{$k}."\n";
 }
